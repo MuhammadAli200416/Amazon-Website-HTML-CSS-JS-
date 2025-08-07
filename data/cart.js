@@ -3,13 +3,15 @@ export const cart = JSON.parse(localStorage.getItem('cart')) || [{
     productName: "Black and Gray Athletic Cotton Socks - 6 Pairs",
     productImage: "images/products/athletic-cotton-socks-6-pairs.jpg",
     productCost: 10.90,
-    quantity: 2
+    quantity: 2,
+    deliveryOptionId: '1'
 },{
     productID: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
     productName: "Intermediate Size Basketball",
     productImage: "images/products/intermediate-composite-basketball.jpg",
     productCost: 20.95,
-    quantity: 2
+    quantity: 2,
+    deliveryOptionId: '2'
 }];
 
 export function saveCartToLocalStorage() {
@@ -31,7 +33,8 @@ export function addToCart(productID){
     else{
         cart.push({
             productID: productID,
-            quantity: 1
+            quantity: 1,
+            deliveryOptionId: '1'
         })
     }
 }
