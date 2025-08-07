@@ -1,4 +1,4 @@
-import { addToCart, cart, updateCartQuantity} from "../data/cart.js";
+import { addToCart , cart , updateCartQuantity , saveCartToLocalStorage} from "../data/cart.js";
 import { products } from "../data/products.js";
 
 let productsHTML = '';
@@ -44,7 +44,7 @@ products.forEach((products) => {
 
             <div class="product-spacer"></div>
 
-            <div class="added-to-cart">
+            <div class="added-to-cart js-added-to-cart-${products.id}">
                 <img src="images/icons/checkmark.png">
                 Added
             </div>
@@ -64,10 +64,11 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
 
         addToCart(productID);
         updateCartQuantity();
+        saveCartToLocalStorage();
 
-        // document.querySelector('.added-to-cart').classList.add('js-added-to-cart');
-        // setTimeout(() => {
-        //     document.querySelector('.js-added-to-cart').classList.remove('js-added-to-cart');
-        // }, 2000);
+        document.querySelector(`.js-added-to-cart-${productID}`).classList.add('js-added-to-cart');
+        setTimeout(() => {
+            document.querySelector(`.js-added-to-cart-${productID}`).classList.remove('js-added-to-cart');
+        }, 2000);
     })
 })

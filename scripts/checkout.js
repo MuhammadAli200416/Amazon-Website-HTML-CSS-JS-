@@ -1,4 +1,4 @@
-import { cart } from "../data/cart.js";
+import { cart , saveCartToLocalStorage } from "../data/cart.js";
 import { products } from "../data/products.js";
 
 function renderCart(){
@@ -100,6 +100,7 @@ function renderCart(){
   document.querySelectorAll('.js-delete-item').forEach((deleteCartItem, index) => {
     deleteCartItem.addEventListener('click', () => {
       cart.splice(index, 1);
+      saveCartToLocalStorage();
       renderCart(); // re-render after deletion
     });
   });

@@ -1,4 +1,4 @@
-export const cart = [{
+export const cart = JSON.parse(localStorage.getItem('cart')) || [{
     productID: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     productName: "Black and Gray Athletic Cotton Socks - 6 Pairs",
     productImage: "images/products/athletic-cotton-socks-6-pairs.jpg",
@@ -11,6 +11,10 @@ export const cart = [{
     productCost: 20.95,
     quantity: 2
 }];
+
+export function saveCartToLocalStorage() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 
 export function addToCart(productID){
     let productFound;
