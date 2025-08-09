@@ -46,3 +46,7 @@ export function updateCartQuantity(){
     });
     document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
+
+export function toFixedCost(cost) {
+    return (Math.round(cost) / 100).toFixed(2);
+}

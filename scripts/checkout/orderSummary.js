@@ -1,4 +1,4 @@
-import { cart , saveCartToLocalStorage } from "../../data/cart.js";
+import { cart , saveCartToLocalStorage, toFixedCost } from "../../data/cart.js";
 import { products } from "../../data/products.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 import { deliveryOptions } from "../../data/deliveryOptions.js";
@@ -46,7 +46,7 @@ export function renderCart(){
               ${matchProduct.name}
             </div>
             <div class="product-price">
-              $${(matchProduct.priceCents / 100).toFixed(2)}
+              $${toFixedCost(matchProduct.priceCents)}
             </div>
             <div class="product-quantity">
               <span>
@@ -109,7 +109,7 @@ function deliveryOptionsHTML(productID, cartProduct) {
     const today = dayjs();
     const deliverydate = today.add(deliveryOption.deliveryDays, 'days');
     const dateString = deliverydate.format('dddd, MMMM D');
-    const price = deliveryOption.priceCents === 0 ? 'FREE' : `$${(deliveryOption.priceCents / 100).toFixed(2)} -`;
+    const price = deliveryOption.priceCents === 0 ? 'FREE' : `$${toFixedCost(deliveryOption.priceCents)} -`;
     const ischecked = deliveryOption.id === cartProduct.deliveryOptionId;
 
     deliveryHTML += `
