@@ -1,4 +1,4 @@
-import { toFixedCost } from "../data/cart.js";
+import { toFixedCost } from "../../data/cart.js";
 
 describe('test suite: toFixedCost', () => {
     it('converts cents into dollars', () => {

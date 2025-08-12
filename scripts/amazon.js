@@ -64,7 +64,6 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
 
         addToCart(productID);
         updateCartQuantity();
-        saveCartToLocalStorage();
 
         document.querySelector(`.js-added-to-cart-${productID}`).classList.add('js-added-to-cart');
         setTimeout(() => {
@@ -72,3 +71,5 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
         }, 2000);
     })
 })
+
+updateCartQuantity();
