@@ -32,7 +32,7 @@ export function renderCart(){
 
     cartHTML += 
     `
-      <div class="cart-item-container">
+      <div class="cart-item-container js-cart-item-container">
         <div class="delivery-date">
           Delivery date: ${dateString}
         </div>
@@ -48,14 +48,14 @@ export function renderCart(){
             <div class="product-price">
               $${toFixedCost(matchProduct.priceCents)}
             </div>
-            <div class="product-quantity">
+            <div class="product-quantity js-product-quantity-${matchProduct.id}">
               <span>
                 Quantity: <span class="quantity-label">${cartProduct.quantity}</span>
               </span>
               <span class="update-quantity-link link-primary">
                 Update
               </span>
-              <span class="delete-quantity-link link-primary js-delete-item" data-index="${index}">
+              <span class="delete-quantity-link link-primary js-delete-item js-delete-link-${matchProduct.id}" data-index="${index}">
                 Delete
               </span>
             </div>

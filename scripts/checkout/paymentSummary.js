@@ -55,5 +55,5 @@ export function renderPaymentSummary() {
     `;
 
     document.querySelector('.js-payment-summary').innerHTML = paymentHTML;
-    document.querySelector('.js-checkout-items').innerHTML = `${cartItemQuantity} items`;
+    // document.querySelector('.js-checkout-items').innerHTML = `${cartItemQuantity} items`;
 }
