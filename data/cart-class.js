@@ -1,4 +1,4 @@
-class Cart{
+class Cart {
     cartItems = undefined;
     #localStorageKey = undefined;
 

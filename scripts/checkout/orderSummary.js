@@ -46,7 +46,7 @@ export function renderCart(){
               ${matchProduct.name}
             </div>
             <div class="product-price">
-              $${toFixedCost(matchProduct.priceCents)}
+              ${matchProduct.getPrice()}
             </div>
             <div class="product-quantity js-product-quantity-${matchProduct.id}">
               <span>
