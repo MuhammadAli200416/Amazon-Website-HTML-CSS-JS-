@@ -63,6 +63,14 @@ class Cart {
     toFixedCost(cost) {
         return (Math.round(cost) / 100).toFixed(2);
     }
+
+    updateCheckoutQuantity(){
+        let cartQuantity = 0;
+        cart.forEach((product) => {
+            cartQuantity += product.quantity;
+        });
+        document.querySelector('.js-checkout-items').innerHTML = `${cartQuantity} items`;
+    }
 }
 
 const cart = new Cart('cart-oop');

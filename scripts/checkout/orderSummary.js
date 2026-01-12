@@ -1,4 +1,4 @@
-import { cart , saveCartToLocalStorage, toFixedCost } from "../../data/cart.js";
+import { cart , saveCartToLocalStorage, toFixedCost, updateCheckoutQuantity } from "../../data/cart.js";
 import { products } from "../../data/products.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 import { deliveryOptions } from "../../data/deliveryOptions.js";
@@ -81,6 +81,7 @@ export function renderCart(){
       saveCartToLocalStorage();
       renderCart();
       renderPaymentSummary();
+      updateCheckoutQuantity();
     });
   });
 
@@ -134,3 +135,6 @@ function deliveryOptionsHTML(productID, cartProduct) {
 
   return deliveryHTML;
 }
+
+updateCheckoutQuantity();
+
