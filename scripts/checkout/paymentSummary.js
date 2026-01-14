@@ -49,9 +49,11 @@ export function renderPaymentSummary() {
             <div class="payment-summary-money">$${toFixedCost(costAfterTax)}</div>
         </div>
 
-        <button class="place-order-button button-primary">
-            Place your order
-        </button>
+        <a href="orders.html">
+            <button class="place-order-button button-primary">
+                Place your order 
+            </button>
+        </a>
     `;
 
     document.querySelector('.js-payment-summary').innerHTML = paymentHTML;

@@ -8,11 +8,12 @@
   align-items: center;
   justify-content: space-between;
 
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   height: 60px;
+  z-index: 1000;
 }
 
 .amazon-header-left-section {
@@ -146,4 +147,19 @@
   
   width: 26px;
   text-align: center;
+}
+
+/* Safe Logo Styles */
+.safe-logo {
+    font-family: Arial, sans-serif;
+    font-size: 24px;       /* Adjust this to match your header height */
+    font-weight: 800;      /* Makes it thick/bold */
+    color: white;
+    letter-spacing: -1px;  /* Tighter letters look more professional */
+    margin-top: 5px;       /* Fine-tune alignment if needed */
+}
+
+.logo-accent {
+    color: #febd69;        /* The classic Amazon orange color */
+    font-style: italic;
 }

@@ -101,3 +101,16 @@
     width: auto;
   }
 }
+/* Paste this if the logo looks plain on the checkout page */
+.safe-logo {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: black; /* Note: Checkout header usually has a white background, so text should be BLACK here */
+    letter-spacing: -1px;
+}
+
+.logo-accent {
+    color: #febd69; /* Orange */
+    font-style: italic;
+}
